@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú lateral responsive - Alceoo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+<!--html== <i class='bx bxl-html5' ></i>-->
+</head>
+<body>
+<!--Este proyecto tiene un header en el que está fuera, pero no importa ya que eso
+lo podríamos poner adentro.-->    
+    <header>
+        <div class="icono__menu">
+            <i class='bx bx-menu' id="btn_open"></i>
+        </div>
+    </header>
+    
+
+    <!--En el sidebar es donde va a ocurrir todo 
+nuestra página-->
+    <div class="menu__side" id="menu_side"><!--Colocamos un id a los elementos a los que 
+les queremos añadir interactividad, en este caso quiero que ocurra algo con el menú-->
+
+        <div class="name__page"><!--Luego de name page crearemos el contenedor de
+         todo el menu-->
+            <i class='bx bxl-youtube' ></i>
+            <h4>Alceoo</h4>
+        </div>
+        <div class="options__menu">
+            <a href="#" class="selected">
+                <div class="option"><!--De lo que se encarga el title es de
+poner un texto cuando nos paremos sobre el elemento-->
+                    <i class='bx bx-home-alt-2' title="Inicio"></i>
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option"><!--De lo que se encarga el title es de
+poner un texto cuando nos paremos sobre el elemento-->
+                    <i class='bx bx-briefcase-alt' title="Portfolio"></i>
+                    <h4>Portafolio</h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option"><!--De lo que se encarga el title es de
+poner un texto cuando nos paremos sobre el elemento-->
+                    <i class='bx bx-user-circle' title="Usuario" ></i>
+                    <h4>Mis skills</h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option"><!--De lo que se encarga el title es de
+poner un texto cuando nos paremos sobre el elemento-->
+                    <i class='bx bx-heart' title="Sobre mi"></i>
+                    <h4>Sobre mi</h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option"><!--De lo que se encarga el title es de
+poner un texto cuando nos paremos sobre el elemento-->
+                    <i class='bx bx-message-rounded' title="Comentarios"></i>
+                    <h4>Comentarios</h4>
+                </div>
+            </a>
+            
+            <a href="#">
+                <div class="option">
+                    <i class='bx bx-edit' title="Mi blog"></i>
+                    <h4>Blog</h4>
+                </div>
+            </a>
+<!--             
+            <div class="">
+                <a href="#">
+                    <div class="salida">
+                        <i class='bx bx-log-out' ></i>
+                        <h4>Log <output></output></h4>
+                    </div>
+                </a>
+            </div> -->
+        </div>
+
+
+    </div>
+<script src="JS/app.js"></script>
+</body>
+</html>

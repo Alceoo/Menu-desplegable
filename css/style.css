@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap');
+/*font-family: 'Poppins', sans-serif;*/
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+body {/*Para que el header no tape al body le vamos a decir que este 
+va a tener un margin-left de 80px ya que al side menú, le pusimos un ancho de 
+80px, así que el body también lo vamos a desplazar 80px para que se vean pegaditos
+
+También vamos a decirle que... 
+*/
+    margin-left: 80px;
+}
+
+header {
+    width: 100%;/*Aqui le estamos diciendo que queremos que tenga el 100% del
+ancho*/
+    height: 80px;
+    background: rgba(255, 0, 0, 0.805);
+    display: flex;/*Esto para posicionarlo en el centro verticalmente*/
+    align-items: center;
+    position: fixed;/*Este position fixed es porque cuando vayamos haciendo
+scroll, no queremos que esto se oculte, queremos que nos vaya siguiendo*/
+    top: 0;
+    z-index: 200;/*El z-index de 200 para que esto se mantenga siempre por encima de todos
+los elementos de la página web.*/
+}
+
+/*Aquí estaremos trabajando con el ícono del menú, al decirle que el ícono 
+va a tomar un ancho de 50px y una altura del 100% de su elemento, lo podemos
+ver con un background red, pero necesitamos centrarlo también*/
+.icono__menu {
+    width: 50px;
+    height: 100%;
+   /* background: red;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+/*También le vamos a poner una transformacion con un trsnlate en X para 
+decirle que se mueva un poco a la derecha., Esto es para tener un espaciado con el menú laterak*/    
+    transform: translateX(10px);/*Ya después le ponemos una transición para que 
+el movimiento no se vea brusco*/
+}
+
+.icono__menu i {/*Pfff, el tamaño se cambia con font-size en este caso, no width*/
+    font-size: 20px;
+    cursor: pointer;/*Quiero que se vea la manita jeje*/
+    position: absolute;
+}
+.menu__side {
+    width: 60px;/*Usualmente este será el ancho del sidebar*/
+    /*Al acortar el ancho a 60px obviamente nos acorta los textos, pero los 
+textos siguen apareciendo, por lo que podríamos poner un 
+overflow: hidden*/
+    overflow: hidden;
+/*Pero se sigue viendo una parte del texto, por lo que tenemos que solucionar eso
+, podría ponerle menos ancho, pero mejor le pongo un borde del mismo color y ya*/
+    border-right: 20px solid rgb(0, 0, 0);
+/*Pero ahora tenemos un problema y es que en un dispositivo móvil se ocultan mis 
+elementos,yo no quiero que esto pase, por lo que le pondré un scroll, pero el 
+problema con este scroll es que cambia mi diseño, ya que se interpone en el medio*/
+    overflow-y: scroll;
+
+
+    height: 100%;/*Me di cuenta tarde, pero al ponerle el height de 100%
+sólo ocupa lo que debería de tener para los elementos, para corregir esto
+ocupamos un position fixed*/
+    background: rgb(0, 0, 0);
+    position: fixed;
+    /*Pero aquí el header me está ocupando un apartado que yo necesito que se
+vea, me lo tapa, para ello usaremos un desplazamiento de body*/
+    top: 0;
+    left: 0;/*Pongo top 0, left 0 para que se mantenga en la parte de arriba
+pegado */
+    color: aliceblue;/*Aquí, como son etiquetas a, no heredan lo que ponemos 
+sobre los divs, sin embargo después utilizaremos este color(a excepción del h4)*/
+    font-size: 18px;
+    z-index: 300;
+}
+/*Ahora tenemos que decirle que los íconos los queremos a los lados de los
+textos, para ello... vamos a ponerle que tenga un width de 250px, para
+que de esa manera lo vayamos observando,
+También un z-index de 300, para que así vaya apareciendo arriba del header.*/
+
+/*Arreglar problema del scroll...
+Para arreglar este problema podemos utilizar estas 3 propiedades, digo que las 
+3 porque unas no son compatibles con algunos navegadores a la fecha.
+*/
+
+/*Ocultar scroll para chrome, safari y opera.*/
+
+.menu__side::-webkit-scrollbar {
+    display: none;
+}
+
+/*Ocultar scroll para firefox mozilla etc.*/
+
+.menu__side {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/*Ya luego que tenemos este apartado, necesitamos hacer que cuando le demos click
+se despliegue y se oculte... ir a la parte de hasta abajo*/
+
+.name__page {
+    padding: 20px 30px;
+    display: flex;/*Esto para que mis elementos se pongan uno al lado del otro*/
+    align-items: center;/*Para centrar el icono con el texto*/
+    margin-top: 10px;/*El espaciadode la parte superior*/
+   
+}
+.name__page i {
+    width: 20px;/*Esto para que así con su ancho
+    mantenga un pequeño margen */
+    margin-right: 20px;/*Para que nos lo despegue del texto un poco*/
+}
+
+.options__menu {
+    padding: 20px 30px;/*Esto para que no estén pegados*/
+    position: absolute;
+    top: 80px;/*Aquí ya vemos como de despega un 
+poco y mantiene el espaciado*/
+
+}
+.options__menu a {
+    color: #ffffffb2;/*De momento lo ponemos un tanto opaco
+Ya que después queremos que al pasar por ellos se note el cambio de color*/
+    cursor: default;/*Para que nos mantenga la flecha*/
+    display: block;/*Esto porque las etiquetas a vienen siendo
+como texto, no como bloques.*/
+    position: relative;/*Aqui le ponemos una posición relativa 
+porque más adelante utilizaremos una relativa para posicionar algo
+que queramos ahí.*/
+
+}
+.options__menu a:hover {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+/*Ahora vamos a posicionar bien las opciones*/
+.options__menu .option {
+/*Un padding, muy importante.*/
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.options__menu .option i {
+    width: 20px;/*Tomamos como referencia la medida del otro 
+    icono en name__page i.*/
+    margin-right: 10px;/*Pero no quedan completamnete alineados
+esto lo puedo solucionar con un width de 20px en el name i */
+    cursor: pointer;
+}
+.options__menu .option h4 {
+    font-weight: 300;
+    cursor: pointer;
+}
+/*Necesitamos que la primer opcion esté marcada*/
+a.selected {/*Creamos una clase, y se la asignamos a el elemento que queremos
+que esté seleccionado(también lo podríamos hacer con JS)*/
+    color: #fff;
+}
+.selected:before {
+    content: '';
+    width: 3px;
+    height: 80%;
+    background: #fff;
+    position: absolute;
+    top: 10%;
+    left: -30px;
+    /*Checar esto con js para hacerlo más dinámico*/
+}
+
+
+/*Clases para usar en JS*/
+/*Vamos a añadir varias propiedades para añadir mediante el evento toggle*/
+.body_move {
+/*Este margin directo en el body es porque necesitamos que el body se mueva 
+en conjunto al menú, le diremos que se mueva 250px.
+
+porque el menú aparece con un ancho de 250px, por lo que moveremos al body 250px
+*/
+    margin-left: 250px;
+}
+
+.menu__side_move {
+    width: 250px;
+}
+
